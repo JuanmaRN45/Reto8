@@ -1,0 +1,27 @@
+<h1>Favoritas</h1>
+<button (click)="listarFavs()">Listar</button>
+<div *ngIf="lista">
+    <div *ngIf="lista!=''" class="{{mensajes[3].tipo}}">
+        <h2>{{mensajes[3].titulo}}</h2>
+        <p>{{mensajes[3].description}}</p>
+    </div>
+</div>
+
+<div *ngIf="lista==''" class="{{mensajes[4].tipo}}">
+    <h2>{{mensajes[4].titulo}}</h2>
+    <p>{{mensajes[4].description}}</p>
+</div>
+<table>
+    <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let listas of lista">
+          <td><img src={{listas.image}} alt={{listas.title}} width="128px" height="128px"></td>
+          <td>{{listas.title}}</td>
+        </tr>
+      </tbody>
+</table>
